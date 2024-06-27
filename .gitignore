@@ -1,1 +1,3 @@
 .aider*
+# Ignore logs folder
+logs/
