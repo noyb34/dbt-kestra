@@ -1,5 +1,12 @@
-.aider*
-# Ignore logs folder
 logs/
-# Ignore docker-compose.yml
-docker-compose.yml
+.envrc
+.env*
+*.png
+.vscode
+.DS_Store
+# Ignore dbt packages
+dbt_packages/
+# Ignore dbt logs
+logs/
+*.log
+target/
