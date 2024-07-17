@@ -8,7 +8,7 @@ comprehensive view of episodes that includes relevant manifestation details.
 
 ### Requirements:
 
-1. Utilize two primary data sources(include in seeds folder):
+1. Utilize two primary data sources(included in seeds folder):
    - Episodes data (containing basic episode information)
    - Manifestations data (containing details about specific versions or formats
      of episodes)
