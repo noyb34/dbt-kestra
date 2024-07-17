@@ -1,12 +1,14 @@
-### Use Case: Media Entity Data Integration
+# dbt Pre-Workshop #2 Project
+
+## Use Case: Media Entity Data Integration
 
 The PBS Metadata Bank contains information about media entities, specifically
 episodes and their associated manifestations. Our goal is to create a
 comprehensive view of episodes that includes relevant manifestation details.
 
-**Requirements:**
+### Requirements:
 
-1. Utilize two primary data sources:
+1. Utilize two primary data sources(include in seeds folder):
    - Episodes data (containing basic episode information)
    - Manifestations data (containing details about specific versions or formats
      of episodes)
@@ -26,7 +28,7 @@ comprehensive view of episodes that includes relevant manifestation details.
    - Any derived fields that provide valuable insights about the episodes and
      their manifestations
 
-   **Guided Tasks:**
+### Guided Tasks:
 
 5. Set up two CSV seed files:
    - episodes.csv
