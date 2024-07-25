@@ -1,0 +1,191 @@
+version: 2
+
+sources:
+  - name: proch_workshop2_dev
+    database: postgresdb
+    schema: proch_workshop2_dev
+    tables:
+      - name: episode
+        columns:
+          - name: uid
+            description: Unique identifier for the episode
+            data_tests:
+              - not_null
+          - name: createdatetime
+            description: Timestamp of when the record was created
+            data_tests:
+              - not_null
+          - name: updatedatetime
+            description: Timestamp of when the record was last updated
+            data_tests:
+              - not_null
+          - name: structuraltype
+            description: Structural type of the episode
+          - name: referenttype
+            description: Referent type of the episode
+          - name: episodeclass
+            description: Class of the episode
+          - name: episodenumber
+            description: Number of the episode
+          - name: title120
+            description: Title of the episode (up to 120 characters)
+          - name: titleclass
+            description: Class of the title
+          - name: titlelanguage
+            description: Language of the title
+          - name: emm_episode_uid
+            description: EMM unique identifier for the episode
+          - name: emm_parent_uid
+            description: EMM unique identifier for the parent of the episode
+          - name: series_uid
+            description: Unique identifier for the series the episode belongs to
+          - name: season_uid
+            description: Unique identifier for the season the episode belongs to
+          - name: countryoforigin
+            description: Country where the episode was produced
+          - name: primarygenre
+            description: Primary genre of the episode
+          - name: secondarygenre
+            description: Secondary genre of the episode
+          - name: distribution_number
+            description: Distribution number of the episode
+          - name: approximate_length
+            description:
+              Approximate length of the episode in ISO 8601 duration format
+          - name: eidrid
+            description: EIDR (Entertainment Identifier Registry) ID
+          - name: entity_type
+            description: Type of the entity
+          - name: primary_mode
+            description: Primary mode of the episode (e.g., Audio)
+          - name: primary_language
+            description: Primary language of the episode
+          - name: secondary_language
+            description: Secondary language of the episode
+          - name: synopsisshort
+            description: Short synopsis of the episode
+          - name: synopsislong
+            description: Long synopsis of the episode
+          - name: published_status
+            description: Publication status of the episode
+          - name: deletedatetime
+            description:
+              Timestamp of when the record was deleted (if applicable)
+          - name: is_deleted
+            description: Flag indicating if the record is deleted
+          - name: title19
+            description: Alternative title (up to 19 characters)
+          - name: title
+            description: Full title of the episode
+          - name: titlelong
+            description: Long version of the title
+          - name: keyword_mood
+            description: Keywords related to the mood of the episode
+          - name: keyword_time_period
+            description: Keywords related to the time period of the episode
+          - name: keyword_theme
+            description: Keywords related to the theme of the episode
+          - name: keyword_characters
+            description: Keywords related to the characters in the episode
+          - name: keyword_setting
+            description: Keywords related to the setting of the episode
+          - name: keyword_subject
+            description: Keywords related to the subject of the episode
+          - name: keyword_general
+            description: General keywords for the episode
+          - name: episode_number
+            description:
+              Episode number as a string (may include non-numeric characters)
+          - name: additional_data_created_by
+            description: User who created additional data
+          - name: additional_data_updated_by
+            description: User who last updated additional data
+          - name: additional_data_deleted_by
+            description: User who deleted additional data (if applicable)
+          - name: additional_data_source
+            description: Source of additional data
+          - name: is_eidr_duplicate_record_found
+            description: Flag indicating if a duplicate EIDR record was found
+          - name: tv_rating
+            description: TV rating of the episode
+          - name: contentid_list
+            description: List of content IDs associated with the episode
+          - name: release_date
+            description: Release date of the episode
+
+      - name: manifestation
+        columns:
+          - name: uid
+            description: Unique identifier for the manifestation
+            data_tests:
+              - unique
+              - not_null
+          - name: createdatetime
+            description: Timestamp of when the record was created
+            data_tests:
+              - not_null
+          - name: updatedatetime
+            description: Timestamp of when the record was last updated
+            data_tests:
+              - not_null
+          - name: emm_manifestation_uid
+            description: EMM unique identifier for the manifestation
+          - name: episode_uid
+            description: Unique identifier of the associated episode
+          - name: parent_manifestation_id
+            description: Identifier of the parent manifestation (if applicable)
+          - name: manifestationclass
+            description: Class of the manifestation
+          - name: emm_parent_uid
+            description:
+              EMM unique identifier for the parent of the manifestation
+          - name: title
+            description: Title of the manifestation
+          - name: entity_type
+            description: Type of the entity
+          - name: eidrid
+            description: EIDR (Entertainment Identifier Registry) ID
+          - name: structuraltype
+            description: Structural type of the manifestation
+          - name: referenttype
+            description: Referent type of the manifestation
+          - name: actual_length
+            description:
+              Actual length of the manifestation in ISO 8601 duration format
+          - name: edit_use
+            description: Intended use of this edit
+          - name: edit_class
+            description: Class of this edit
+          - name: audio_closedcaption
+            description: Closed caption information
+          - name: audio_type
+            description: Type of audio (e.g., Stereo)
+          - name: video_vchip
+            description: V-chip rating
+          - name: video_ei
+            description: Educational/Informational content flag
+          - name: published_status
+            description: Publication status of the manifestation
+          - name: deletedatetime
+            description:
+              Timestamp of when the record was deleted (if applicable)
+          - name: is_deleted
+            description: Flag indicating if the record is deleted
+          - name: title_old
+            description: Old title of the manifestation
+          - name: title_old2
+            description: Second old title of the manifestation
+          - name: video_hidef
+            description: High definition video flag
+          - name: additional_data_created_by
+            description: User who created additional data
+          - name: additional_data_updated_by
+            description: User who last updated additional data
+          - name: additional_data_deleted_by
+            description: User who deleted additional data (if applicable)
+          - name: additional_data_source
+            description: Source of additional data
+          - name: contentid_list
+            description: List of content IDs associated with the manifestation
+          - name: release_date
+            description: Release date of the manifestation

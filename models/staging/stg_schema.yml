@@ -1,0 +1,173 @@
+version: 2
+
+models:
+  - name: stg_episode
+    description: "Staged episode data with cleaned and typed columns"
+    columns:
+      - name: episode_uid
+        description: "Unique identifier for the episode"
+        data_tests:
+          - unique
+          - not_null
+      - name: created_at
+        description: "Timestamp when the episode record was created"
+      - name: updated_at
+        description: "Timestamp when the episode record was last updated"
+      - name: structural_type
+        description: "Structural type of the episode"
+      - name: referent_type
+        description: "Referent type of the episode"
+      - name: episode_class
+        description: "Classification of the episode"
+      - name: episode_number
+        description:
+          "Sequential number of the episode within its series or season"
+        data_tests:
+          - not_null
+      - name: title_120
+        description: "Episode title, limited to 120 characters"
+      - name: title_class
+        description: "Classification of the episode title"
+      - name: title_language
+        description: "Language of the episode title"
+      - name: emm_episode_uid
+        description: "EMM unique identifier for the episode"
+      - name: emm_parent_uid
+        description: "EMM unique identifier for the parent entity"
+      - name: series_uid
+        description: "Unique identifier for the series"
+      - name: season_uid
+        description: "Unique identifier for the season"
+      - name: country_of_origin
+        description: "Country where the episode originated"
+      - name: primary_genre
+        description: "Primary genre of the episode"
+      - name: secondary_genre
+        description: "Secondary genre of the episode"
+      - name: distribution_number
+        description: "Distribution number for the episode"
+      - name: approximate_length
+        description: "Approximate length of the episode"
+      - name: eidr_id
+        description:
+          "Entertainment Identifier Registry (EIDR) ID for the episode"
+        data_tests:
+          - unique
+      - name: entity_type
+        description: "Type of entity for the episode"
+      - name: primary_mode
+        description: "Primary mode of the episode"
+      - name: primary_language
+        description: "Primary language of the episode"
+      - name: secondary_language
+        description: "Secondary language of the episode"
+      - name: synopsis_short
+        description: "Short synopsis of the episode"
+      - name: synopsis_long
+        description: "Long synopsis of the episode"
+      - name: published_status
+        description: "Publication status of the episode"
+      - name: deleted_at
+        description: "Timestamp when the episode was deleted"
+      - name: title19
+        description: "Alternative title field, limited to 19 characters"
+      - name: title
+        description: "Full title of the episode"
+      - name: title_long
+        description: "Long version of the episode title"
+      - name: keyword_mood
+        description: "Keywords related to the mood of the episode"
+      - name: keyword_time_period
+        description: "Keywords related to the time period of the episode"
+      - name: keyword_theme
+        description: "Keywords related to the theme of the episode"
+      - name: keyword_characters
+        description: "Keywords related to the characters in the episode"
+      - name: keyword_setting
+        description: "Keywords related to the setting of the episode"
+      - name: keyword_subject
+        description: "Keywords related to the subject of the episode"
+      - name: keyword_general
+        description: "General keywords for the episode"
+      - name: tv_rating
+        description: "TV rating for the episode"
+      - name: contentid_list
+        description: "List of content IDs associated with the episode"
+      - name: release_date
+        description: "Release date of the episode"
+
+  - name: stg_manifestation
+    description: "Staged manifestation data with cleaned and typed columns"
+    columns:
+      - name: manifestation_uid
+        description: "Unique identifier for the manifestation"
+        data_tests:
+          - unique
+          - not_null
+      - name: created_at
+        description: "Timestamp when the manifestation record was created"
+      - name: updated_at
+        description: "Timestamp when the manifestation record was last updated"
+      - name: emm_manifestation_uid
+        description: "EMM unique identifier for the manifestation"
+      - name: episode_uid
+        description: "Foreign key linking to the associated episode"
+        data_tests:
+          - relationships:
+              to: ref('stg_episode')
+              field: episode_uid
+      - name: parent_manifestation_id
+        description: "Identifier for the parent manifestation"
+      - name: manifestationclass
+        description: "Classification of the manifestation"
+      - name: emm_parent_uid
+        description: "EMM unique identifier for the parent entity"
+      - name: title
+        description: "Title of the manifestation"
+      - name: entity_type
+        description: "Type of entity for the manifestation"
+      - name: eidrid
+        description:
+          "Entertainment Identifier Registry (EIDR) ID for the manifestation"
+        data_tests:
+          - unique
+      - name: structuraltype
+        description: "Structural type of the manifestation"
+      - name: referenttype
+        description: "Referent type of the manifestation"
+      - name: actual_length
+        description: "Actual length of the manifestation content"
+      - name: edit_use
+        description: "Edit use information for the manifestation"
+      - name: edit_class
+        description: "Edit classification for the manifestation"
+      - name: audio_closedcaption
+        description: "Closed caption information for the audio"
+      - name: audio_type
+        description: "Type of audio for the manifestation"
+      - name: video_vchip
+        description: "V-chip rating for the video content"
+      - name: video_ei
+        description: "Educational/Informational flag for the video content"
+      - name: published_status
+        description: "Publication status of the manifestation"
+      - name: deleted_at
+        description: "Timestamp when the manifestation was deleted"
+      - name: title_old
+        description: "Old title of the manifestation"
+      - name: title_old2
+        description: "Second old title of the manifestation"
+      - name: video_hidef
+        description: "High definition flag for the video content"
+      - name: additional_data_created_by
+        description: "User who created additional data"
+      - name: additional_data_updated_by
+        description: "User who last updated additional data"
+      - name: additional_data_deleted_by
+        description: "User who deleted additional data"
+      - name: additional_data_source
+        description: "Source of additional data"
+      - name: contentid_list
+        description: "List of content IDs associated with the manifestation"
+      - name: release_date
+        description: "Release date of the manifestation"

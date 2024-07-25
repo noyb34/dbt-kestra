@@ -1,5 +1,15 @@
 # dbt Pre-Workshop #2 Project
 
+<!-- code_chunk_output -->
+
+- [dbt Pre-Workshop #2 Project](#dbt-pre-workshop-2-project)
+  - [Use Case: Media Entity Data Integration](#use-case-media-entity-data-integration)
+    - [Requirements:](#requirements)
+    - [Guided Tasks:](#guided-tasks)
+    - [Solution:](#solution)
+
+<!-- /code_chunk_output -->
+
 ## Use Case: Media Entity Data Integration
 
 The PBS Metadata Bank contains information about media entities, specifically
@@ -37,12 +47,13 @@ comprehensive view of episodes that includes relevant manifestation details.
    - models/staging/stg_episodes.sql
    - models/staging/stg_manifestations.sql
 7. Develop an intermediate model:
-   - models/intermediate/int_episode_manifestations.sql
-   - This model should join episodes with manifestations, handling the
-     one-to-many relationship.
+   - models/intermediate/int_cleansed_episode.sql
+   - This model should cleased the episodes, removing any duplicates or
+     irrelevant data.
 8. Build the final model:
-   - models/marts/fct_episodes.sql This model should include episode information
-     along with aggregated manifestation data.
+   - models/marts/fact_episodes.sql This model should include episode
+     information along with aggregated manifestation data, handling the
+     one-to-many relationship.
 9. Add tests:
    - Unique and not_null tests for key fields
    - Custom test for checking the relationship between episodes and
@@ -50,3 +61,10 @@ comprehensive view of episodes that includes relevant manifestation details.
 10. Write documentation:
     - Add descriptions for models and key columns in .yml files
     - Create a markdown file explaining the episode-manifestation relationship
+
+### Solution:
+
+1. Clone this repository to your local machine.
+2. update the `profiles.yml` file with your database connection details.
+3. Run `dbt seed` to load the seed data into your database.
+4. Run `dbt run` to build the final model.

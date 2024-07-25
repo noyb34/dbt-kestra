@@ -1,36 +1,19 @@
-dbt_poc:
+workshop2:
   target: dev
   outputs:
-    
     dev:
       type: postgres
-      host: postgres-dev
-      user: user
-      password: password
-      port: 5432
-      dbname: dev_db
+      host: localhost
+      user: postgresadmin
+      password: admin123
+      port: 56131
+      dbname: postgresdb
       schema: public
     staging:
       type: postgres
-      host: postgres-staging
-      user: user
-      password: password
-      port: 5433
-      dbname: staging_db
-      schema: public
-    ci:
-      type: postgres
       host: localhost
-      user: user
-      password: password
-      port: 5432
-      dbname: dev_db
-      schema: public 
-    cd:
-      type: postgres
-      host: localhost
-      user: user
-      password: password
-      port: 5432
-      dbname: staging_db
+      user: postgresadmin
+      password: admin123
+      port: 56131
+      dbname: postgresdb
       schema: public

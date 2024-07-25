@@ -1,0 +1,21 @@
+models:
+  - name: int_cleansed_episode
+    description: Cleansed Episode
+    columns:
+      - name: uid
+        description: Unique Identifier
+        data_tests:
+          - unique
+          - not_null
+      - name: createdatetime
+        description: Created Datetime
+        data_tests:
+          - not_null
+      - name: updatedatetime
+        description: Updated Datetime
+        data_tests:
+          - not_null
+      - name: structuraltype
+        description: Structural Type
+      - name: referenttype
+        description: Referent Type

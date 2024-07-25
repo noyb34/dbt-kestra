@@ -1,0 +1,90 @@
+version: 2
+
+seeds:
+  - name: episode
+    config:
+      column_types:
+        uid: bigint
+        createdatetime: timestamp
+        updatedatetime: timestamp
+        structuraltype: varchar
+        referenttype: varchar
+        episodeclass: varchar
+        episodenumber: integer
+        title120: varchar
+        titleclass: varchar
+        titlelanguage: varchar
+        emm_episode_uid: varchar
+        emm_parent_uid: varchar
+        series_uid: bigint
+        season_uid: bigint
+        countryoforigin: varchar
+        primarygenre: varchar
+        secondarygenre: varchar
+        distribution_number: integer
+        approximate_length: varchar
+        eidrid: varchar
+        entity_type: varchar
+        primary_mode: varchar
+        primary_language: varchar
+        secondary_language: varchar
+        synopsisshort: text
+        synopsislong: text
+        published_status: varchar
+        deletedatetime: timestamp
+        is_deleted: boolean
+        title19: varchar
+        title: varchar
+        titlelong: varchar
+        keyword_mood: varchar
+        keyword_time_period: varchar
+        keyword_theme: varchar
+        keyword_characters: varchar
+        keyword_setting: varchar
+        keyword_subject: varchar
+        keyword_general: varchar
+        episode_number: varchar
+        additional_data_created_by: varchar
+        additional_data_updated_by: varchar
+        additional_data_deleted_by: varchar
+        additional_data_source: varchar
+        is_eidr_duplicate_record_found: boolean
+        tv_rating: varchar
+        contentid_list: jsonb
+        release_date: timestamp
+
+  - name: manifestation
+    config:
+      column_types:
+        uid: bigint
+        createdatetime: timestamp
+        updatedatetime: timestamp
+        emm_manifestation_uid: varchar
+        episode_uid: bigint
+        parent_manifestation_id: varchar
+        manifestationclass: varchar
+        emm_parent_uid: varchar
+        title: varchar
+        entity_type: varchar
+        eidrid: varchar
+        structuraltype: varchar
+        referenttype: varchar
+        actual_length: varchar
+        edit_use: varchar
+        edit_class: varchar
+        audio_closedcaption: varchar
+        audio_type: varchar
+        video_vchip: varchar
+        video_ei: boolean
+        published_status: varchar
+        deletedatetime: timestamp
+        is_deleted: boolean
+        title_old: varchar
+        title_old2: varchar
+        video_hidef: boolean
+        additional_data_created_by: varchar
+        additional_data_updated_by: varchar
+        additional_data_deleted_by: varchar
+        additional_data_source: varchar
+        contentid_list: jsonb
+        release_date: timestamp

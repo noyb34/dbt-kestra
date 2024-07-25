@@ -1,23 +1,21 @@
-name: "dbt_poc"
+name: "workshop2"
 version: "1.0"
 config-version: 2
 
 # Define the paths for different dbt components
 model-paths: ["models"]
 seed-paths: ["seeds"]
-
+macro-paths: ["macros"]
+test-paths: ["tests"]
+snapshot-paths: ["snapshots"]
+docs-paths: ["docs"]
+clean-targets: ["target", "dbt_packages", "logs"]
 # Specify the default target and configurations
-profile: "dbt_poc"
+profile: "workshop2"
 
 # Define the models configuration
 models:
-  dbt-poc:
+  workshop2:
     # Configure the materialization for models
     # this can be one of: view, table, incremental, ephemeral, or materialized view
     materialized: table
-
-# Configure the seeds with the correct column types
-seeds:
-  dbt-poc:
-    episode:
-    manifestation:
