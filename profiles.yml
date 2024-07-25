@@ -3,17 +3,17 @@ workshop2:
   outputs:
     dev:
       type: postgres
-      host: localhost
+      host: host_name
       user: postgresadmin
-      password: admin123
-      port: 56131
-      dbname: postgresdb
-      schema: public
+      password: your_password
+      port: port_number
+      dbname: your_db_name
+      schema: your_schema_name
     staging:
       type: postgres
-      host: localhost
-      user: postgresadmin
-      password: admin123
-      port: 56131
-      dbname: postgresdb
-      schema: public
+      host: host_name
+      user: your_user_name
+      password: your_password
+      port: port_number
+      dbname: your_db_name
+      schema: your_schema_name
